@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/global.css';
 
 const phone = '+380 68 053 97 09'
 const phoneLink = 'tel:0680539709'
@@ -28,6 +27,72 @@ function PhoneLink({ children = 'Зателефонувати для броню�
 export default function HomePage() {
   return (
     <div className="site-shell">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+        
+        :root {
+          font-family: 'DM Sans', sans-serif;
+          color: #26342d;
+          background: #f4f2ec;
+          font-synthesis: none;
+          text-rendering: optimizeLegibility;
+          --paper: #f4f2ec;
+          --ink: #26342d;
+          --pine: #203b33;
+          --pine-deep: #172b26;
+          --muted: #68736c;
+          --line: rgba(38, 52, 45, .18);
+          --gold: #d6ad77;
+          --display: 'Playfair Display', Georgia, serif;
+          --body: 'DM Sans', sans-serif;
+          --content: 1160px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+        body { margin: 0; min-width: 320px; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+        button, a { font: inherit; }
+        a { color: inherit; text-decoration: none; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+        :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+        img { display: block; max-width: 100%; }
+        .site-shell { overflow: clip; }
+        
+        .site-header { position: absolute; z-index: 5; inset: 0 0 auto; height: 84px; padding: 0 max(28px, calc((100vw - var(--content)) / 2)); display: flex; align-items: center; justify-content: space-between; color: white; border-bottom: 1px solid rgba(255,255,255,.19); }
+        .wordmark { font-family: var(--display); font-size: 25px; font-weight: 700; letter-spacing: -.06em; }
+        .wordmark span { font-weight: 500; font-style: italic; }
+        .main-nav { display: flex; align-items: center; gap: 34px; font-size: 13px; }
+        .main-nav a, .header-call { transition: opacity .2s ease; }
+        .main-nav a:hover, .header-call:hover { opacity: .7; }
+        .header-call { border-bottom: 1px solid rgba(255,255,255,.6); padding-bottom: 4px; font-size: 13px; }
+        
+        .hero { min-height: 700px; height: min(850px, 100svh); max-height: 900px; position: relative; display: flex; align-items: center; color: white; background: var(--pine); isolation: isolate; }
+        .hero-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(15,35,29,.24) 0%, rgba(17,39,32,.08) 100%), linear-gradient(0deg, rgba(15,35,29,.18), transparent 40%); }
+        .hero-content { width: min(var(--content), calc(100% - 56px)); margin: 50px auto 30px; position: relative; z-index: 1; }
+        .eyebrow, .section-kicker, .card-label { text-transform: uppercase; letter-spacing: .13em; font-size: 11px; font-weight: 600; }
+        .eyebrow { display: flex; align-items: center; gap: 11px; margin: 0 0 25px; color: rgba(255,255,255,.85); }
+        .eyebrow-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 5px rgba(214,173,119,.22); }
+        
+        .hero h1, .section-wrap h2, .pricing-heading h2 { font-family: var(--display); font-size: clamp(58px, 8.4vw, 112px); font-weight: 500; line-height: .98; letter-spacing: -.055em; margin: 0; }
+        .hero h1 em, .section-wrap h2 em, .pricing-heading h2 em { font-weight: 500; }
+        .hero-description { max-width: 430px; margin: 27px 0 30px; color: rgba(255,255,255,.88); font-size: 17px; line-height: 1.65; }
+        .hero-actions { display: flex; align-items: center; gap: 26px; }
+        .button { min-height: 54px; padding: 0 21px; display: inline-flex; align-items: center; justify-content: center; gap: 28px; border-radius: 999px; font-size: 13px; font-weight: 700; transition: transform .2s ease, background .2s ease, color .2s ease; }
+        .button:hover { transform: translateY(-2px); }
+        .button-light { color: var(--pine-deep); background: var(--paper); }
+        .button-light:hover { background: white; }
+        .button-arrow { font-size: 20px; line-height: 1; }
+        .text-link { padding: 9px 0; font-size: 13px; color: rgba(255,255,255,.9); }
+        .text-link span { margin-left: 6px; }
+        
+        .hero-bottom { position: absolute; left: max(28px, calc((100vw - var(--content)) / 2)); right: max(28px, calc((100vw - var(--content)) / 2)); bottom: 28px; display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.35); padding-top: 12px; color: rgba(255,255,255,.76); font-size: 11px; }
+        .scroll-cue { display: none; }
+        .section-wrap { width: min(var(--content), calc(100% - 56px)); margin-inline: auto; }
+        .welcome { padding-top: 105px; padding-bottom: 116px; }
+        .section-kicker { display: flex; align-items: center; gap: 15px; color: var(--muted); }
+        .section-kicker span:first-child { color: #b18552; }
+      `}</style>
+
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Bilka Resort — на головну">bilka<span>resort</span></a>
         <nav className="main-nav" aria-label="Головна навігація">
