@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "build": "echo 'No build required'"
   },
   "dependencies": {
     "react": "18.3.1",
