@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "echo 'No build required'"
+    "build": "esbuild src/app/browser-entry.jsx --bundle --outfile=dist/bundle.js --loader:.jsx=jsx"
   },
   "dependencies": {
     "react": "18.3.1",
