@@ -179,7 +179,6 @@ export default function HomePage() {
   )
 }
 
-// Запуск рендеринга приложения
 const container = document.getElementById('root')
 if (container) {
   const root = createRoot(container)
