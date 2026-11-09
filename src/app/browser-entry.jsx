@@ -174,3 +174,4 @@ export default function HomePage() {
     </div>
   )
 }
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
