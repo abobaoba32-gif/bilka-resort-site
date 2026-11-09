@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import '../styles/global.css';
 
 const phone = '+380 68 053 97 09'
 const phoneLink = 'tel:0680539709'
