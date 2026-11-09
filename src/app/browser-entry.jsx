@@ -1,3 +1,7 @@
+import '../styles/global.css'
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+
 const phone = '+380 68 053 97 09'
 const phoneLink = 'tel:0680539709'
 const mapLink = 'https://www.google.com/maps/search/?api=1&query=Bilka%20Resort%20%D0%92%D0%B5%D1%80%D1%85%D0%BD%D1%8F%20%D0%91%D1%96%D0%BB%D0%BA%D0%B0'
@@ -173,4 +177,11 @@ export default function HomePage() {
       <a className="mobile-call" href={phoneLink}><span>Зателефонувати</span><span aria-hidden="true">↗</span></a>
     </div>
   )
+}
+
+// Запуск рендеринга приложения
+const container = document.getElementById('root')
+if (container) {
+  const root = createRoot(container)
+  root.render(<HomePage />)
 }
